@@ -171,7 +171,10 @@ counts = {
 
   function match(val, expr) {
     try {
-      var result = expr();
+      var result;
+      if(jQuery.isFunction(expr)) result = expr();
+      else result = expr;
+      
       if(val == result) pass();
       else fail(result, expr, 'expected '+val+' but got')
     }
