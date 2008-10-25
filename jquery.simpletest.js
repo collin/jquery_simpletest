@@ -72,8 +72,6 @@ counts = {
       .append(_.template('results', counts));
   });
   
-})(jQuery);
-
   function count(which) {
     counts[which]++;
     jQuery('.results').replaceWith(jQuery.template('results', counts));
@@ -154,6 +152,13 @@ counts = {
     while_running(expr);
   }
   
+  function exists(obj, attr) {
+    if(obj[attr]) pass();
+    else {
+      fail(attr, "", 'expected object to have attribute');
+    }
+  }
+  
   function assert(expr) {
     try {
       var result = expr();
@@ -171,3 +176,5 @@ counts = {
     }
     catch(e) {err(expr, e);}
   }
+})(jQuery);
+
