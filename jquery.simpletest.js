@@ -70,8 +70,9 @@ counts = {
       .append(_.template('results', counts))
       .append("<div id='console'>")
       .append(_.template('results', counts));
-  });
-  
+  });  
+})(jQuery);
+
   function count(which) {
     counts[which]++;
     jQuery('.results').replaceWith(jQuery.template('results', counts));
@@ -176,5 +177,4 @@ counts = {
     }
     catch(e) {err(expr, e);}
   }
-})(jQuery);
 
