@@ -162,7 +162,9 @@ counts = {
   
   function assert(expr) {
     try {
-      var result = expr();
+      var result;
+      if(jQuery.isFunction(expr)) result = expr();
+      else result = expr;
       if(result) pass();
       else fail(result, expr, 'expected true got');
     }
