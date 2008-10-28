@@ -168,6 +168,14 @@ counts = {
     catch(e) {pass(fn);}
   }
   
+  function executes(fn) {
+    try {
+      var result = fn();
+      pass();
+    }
+    catch(e) {fail(result, fn, should not have errored);};
+  }
+  
   function assert(expr) {
     try {
       var result;
