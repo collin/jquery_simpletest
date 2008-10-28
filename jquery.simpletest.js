@@ -173,7 +173,7 @@ counts = {
       var result = fn();
       pass();
     }
-    catch(e) {fail(result, fn, 'should not have errored');};
+    catch(e) {err(fn, e);};
   }
   
   function assert(expr) {
