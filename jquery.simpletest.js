@@ -159,6 +159,14 @@ counts = {
       fail(attr, "", 'expected object to have attribute');
     }
   }
+
+  function raises(fn) {
+    try {
+      var result = fn();
+      fail(result, fn, 'expected exception got');
+    }
+    catch(e) {past(fn)}
+  }
   
   function assert(expr) {
     try {
