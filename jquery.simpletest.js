@@ -165,7 +165,7 @@ counts = {
       var result = fn();
       fail(result, fn, 'expected exception got');
     }
-    catch(e) {past(fn)}
+    catch(e) {pass(fn);}
   }
   
   function assert(expr) {
